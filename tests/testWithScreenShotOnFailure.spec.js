@@ -16,7 +16,7 @@ function getCurrentDateTime() {
   // hook to capture screenshot on failure
   test.afterEach(async ({ page }, testInfo) => {
     if (testInfo.status !== testInfo.expectedStatus) {
-        const screenshotPath = path.join(__dirname, 'screenshots', `${testInfo.title}_${getCurrentDateTime()}_${testInfo.project.name}.png`);
+        const screenshotPath = path.join(__dirname, '..', 'screenshots', `${testInfo.title}_${getCurrentDateTime()}_${testInfo.project.name}.png`);
         await page.screenshot({ path: screenshotPath });
         console.log(`Screenshot saved: ${screenshotPath}`);
     }
